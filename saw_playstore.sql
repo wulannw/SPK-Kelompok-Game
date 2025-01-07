@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:8889
--- Generation Time: Jan 06, 2022 at 03:26 PM
--- Server version: 5.7.34
--- PHP Version: 8.0.8
+-- Host: localhost
+-- Generation Time: Jan 07, 2025 at 12:34 PM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -31,16 +31,18 @@ CREATE TABLE `saw_aplikasi` (
   `nama` varchar(100) NOT NULL,
   `pengembang` varchar(100) NOT NULL,
   `kategori` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `saw_aplikasi`
 --
 
 INSERT INTO `saw_aplikasi` (`nama`, `pengembang`, `kategori`) VALUES
-('Clash Of Clans', 'Supercell', 'Permainan'),
-('Peduli Lindungi', 'Ministry of Health Republic Indonesia', 'Kesehatan'),
-('Tiktok', 'Tiktok Pte. Ltd.', 'Sosial');
+('Genshin Impact', 'COGNOSPHERE PTE. LTD.', 'Role Playing'),
+('Good Pizza, Great Pizza', 'TapBlaze', 'Simulation'),
+('Minecraft', 'Mojang', 'Simulation'),
+('Need for Speed No Limits', 'ELECTRONIC ARTS', 'Racing'),
+('Sky: Children of the Light', 'thatgamecompany inc', 'Role Playing');
 
 -- --------------------------------------------------------
 
@@ -56,7 +58,7 @@ CREATE TABLE `saw_kriteria` (
   `aktif` float NOT NULL,
   `manfaat` float NOT NULL,
   `kelebihan` float NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `saw_kriteria`
@@ -79,16 +81,15 @@ CREATE TABLE `saw_penilaian` (
   `aktif` float NOT NULL,
   `manfaat` float NOT NULL,
   `kelebihan` float NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `saw_penilaian`
 --
 
 INSERT INTO `saw_penilaian` (`nama`, `peringkat`, `ukuran`, `unduhan`, `aktif`, `manfaat`, `kelebihan`) VALUES
-('Clash Of Clans', 4.3, 2, 5, 4, 3, 3),
-('Peduli Lindungi', 3.6, 2, 4, 4, 4, 3),
-('Tiktok', 4.5, 3, 3, 3, 2, 2);
+('Genshin Impact', 4.4, 4, 4, 4, 3, 3),
+('Good Pizza, Great Pizza', 4.6, 3, 4, 4, 3, 4);
 
 -- --------------------------------------------------------
 
@@ -100,16 +101,15 @@ CREATE TABLE `saw_perankingan` (
   `no` int(11) NOT NULL,
   `nama` varchar(100) NOT NULL,
   `nilai_akhir` float NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Dumping data for table `saw_perankingan`
 --
 
 INSERT INTO `saw_perankingan` (`no`, `nama`, `nilai_akhir`) VALUES
-(1, 'Clash Of Clans', 0.964),
-(2, 'Peduli Lindungi', 0.936),
-(3, 'Tiktok', 0.728);
+(1, 'Genshin Impact', 0.935),
+(2, 'Good Pizza, Great Pizza', 1.02);
 
 --
 -- Indexes for dumped tables
@@ -153,7 +153,7 @@ ALTER TABLE `saw_kriteria`
 -- AUTO_INCREMENT for table `saw_perankingan`
 --
 ALTER TABLE `saw_perankingan`
-  MODIFY `no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `no` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
