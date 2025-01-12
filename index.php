@@ -147,5 +147,4 @@ include 'components/head.php';
 </body>
 </html>
 <?php
-include 'components/foot.php';
 ?>
